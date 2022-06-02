@@ -1,0 +1,17 @@
+kind: Route
+metadata:
+  labels:
+    app.kubernetes.io/name: getting-started
+    app.kubernetes.io/version: 1.0.0-SNAPSHOT
+    app.openshift.io/runtime: quarkus
+  name: getting-started
+  namespace: quarkus
+spec:
+  host: getting-started-quarkus.apps.shared-na46.openshift.opentlc.com
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: getting-started
+    weight: 100
+  wildcardPolicy: None
